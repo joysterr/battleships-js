@@ -1,3 +1,7 @@
+:root {
+    --c-background-dark: #121212;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,4 +13,6 @@ body {
     display: grid;
     place-items: center;
     font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--c-background-dark);
 }
