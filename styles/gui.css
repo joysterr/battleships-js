@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+#board {
+    width: 502px;
+    height: 502px;
+    border: solid 1px blue;
+}
+
+.board-btn {
+    height: 50px;
+    width: 50px;
+    border: solid 1px gray;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+}
+
+.board-btn:hover {
+    background-image: linear-gradient(50deg, #8BC6EC 0%, #9599E2 100%);
+}
