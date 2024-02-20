@@ -16,12 +16,28 @@
 .board__btn {
     height: 50px;
     aspect-ratio: 1;
+
+    font-size: 1rem;
+
     border: solid 1px gray;
-    background-color: #8BC6EC;
+
     background: linear-gradient(135deg, var(--c-water-light) 0%, var(--c-water-dark) 100%);
+    color: var(--c-background-dark);
+
+    cursor: pointer;
 }
 
 .board__btn:hover {
     background: linear-gradient(50deg, var(--c-water-light) 0%, var(--c-water-dark) 100%);
     border: solid 1px black;
+}
+
+.board__btn--miss {
+    background: none;
+    color: red;
+}
+
+.board__btn--miss:hover {
+    background: none;
+    color: red;
 }
