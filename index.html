@@ -3,13 +3,39 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./styles/main.css">
-        <link rel="stylesheet" href="./styles/gui.css">
+        <link rel="stylesheet" href="./styles/main.css" />
+        <link rel="stylesheet" href="./styles/gui.css" />
         <title>Battleships | Let's Play</title>
     </head>
     <body>
-        <div id="board" class="board"></div>
-        <script src="./scripts/board.js"></script>
-        <script src="./scripts/test.js"></script>
+        <div class="board-container">
+            <div class="board__axis board__axis--x">
+                <div>0</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+            <div class="board__axis board__axis--y">
+                <div>0</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+            </div>
+            <div id="board" class="board"></div>
+        </div>
+            <script src="./scripts/board.js"></script>
+            <script src="./scripts/test.js"></script>
     </body>
 </html>
