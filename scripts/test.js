@@ -45,6 +45,7 @@ function activateRadar() {
         isRadarActive = true
         radarBtnStatus('active')
         console.log(`radar left: ${radarLeft}`)
+        updateRadarCount()
     }
 }
 
@@ -53,13 +54,20 @@ function radarBtnStatus(status) {
     switch (status) {
         case 'base':
             radarBtn.innerText = 'Activate Radar'
+            radarBtn.classList.remove('radar__btn--active')
             break
         case 'active':
             radarBtn.innerText = 'Radar: ON'
+            radarBtn.classList.add('radar__btn--active')
             break
         case 'disabled':
             radarBtn.innerText = 'Radar: OFF'
             radarBtn.disabled = true
             break
     }
+}
+
+function updateRadarCount() {
+    const radarCount = document.getElementById('radarCount')
+    radarCount.innerHTML = `Radar left: ${radarLeft}`
 }
