@@ -16,3 +16,7 @@ body {
 
     background-color: var(--c-background-dark);
 }
+
+button {
+    cursor: pointer;
+}

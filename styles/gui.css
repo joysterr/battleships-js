@@ -1,6 +1,9 @@
 :root {
     --c-water-light: #8BC6EC;
     --c-water-dark: #9599E2;
+
+    /* fonts */
+    --f-sm: 0.8rem;
 }
 
 * {
@@ -73,4 +76,44 @@
 .board__btn--miss:hover {
     background: none;
     color: red;
+}
+
+/* radar */
+
+.radar-component {
+    width: 50%;
+    padding-block: 1rem;
+    border: 1px solid white;
+
+    text-align: center;
+}
+
+.radar__btn {
+    padding: 0.5rem;
+
+    border: 1px solid transparent;
+    border-radius: 0.2rem;
+
+    font-size: var(--f-sm);
+
+    background-color: var(--c-water-light);
+
+    transition: all 0.3s ease;
+}
+
+.radar__btn:hover {
+    border: 1px solid var(--c-water-dark);
+
+    background-color: transparent;
+    color: var(--c-water-dark);
+}
+
+.radar__btn--active {
+    background-color: var(--c-water-dark);
+}
+
+.radar__count {
+    margin-block-start: 0.5rem;
+    color: white;
+    font-size: var(--f-sm);
 }
