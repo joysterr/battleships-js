@@ -68,6 +68,18 @@
     border: solid 1px black;
 }
 
+.board__btn--hit {
+    background: none;
+    color: greenyellow;
+    font-size: var(--f-sm);
+}
+
+.board__btn--hit:hover {
+    background: none;
+    color: greenyellow;
+    font-size: var(--f-sm);
+}
+
 .board__btn--miss {
     background: none;
     color: red;

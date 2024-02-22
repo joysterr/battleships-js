@@ -10,9 +10,46 @@ function fire(xCo, yCo) {
         radarBtnStatus('base')
     } else {
         fireOutcome(xCo, yCo)
+        checkWin()
     }
 }
 
+function fireOutcome(xCo, yCo) {
+    const btnClicked = document.getElementById(`btn${xCo}${yCo}`)
+    if (logicBoard[yCo][xCo] === 0) {
+        btnClicked.innerHTML = '&times;'
+        btnClicked.classList.add('board__btn--miss')
+    } else {
+        shipHit(xCo, yCo)
+    }
+}
+
+function shipHit(xCo, yCo) {
+    const btnClicked = document.getElementById(`btn${xCo}${yCo}`)
+    allShips.forEach(ship => {
+        if (logicBoard[yCo][xCo] === ship.size) {
+            btnClicked.innerHTML = ship.letter
+            btnClicked.classList.add('board__btn--hit')
+            logicBoard[yCo][xCo] = -1
+        }
+    })
+}
+
+
+function checkWin() {
+    let sum = 0
+    for (let i = 0; i < grid; i++) {
+        for (let j = 0; j < grid; j++) {
+            sum += logicBoard[i][j]
+        }
+    }
+    if (sum === -15) { // all ship sizes, negated total
+        alert('WINNER. GAME OVER!')
+    }
+}
+
+
+// RADAR FEATURE 
 function placeRadar(xCo, yCo) {
     const radarSize = 1
     const radarMapX = [xCo, (xCo+radarSize), (xCo-radarSize)]
@@ -29,12 +66,6 @@ function placeRadar(xCo, yCo) {
             }
         }
     }
-}
-
-function fireOutcome(xCo, yCo) {
-    const btnClicked = document.getElementById(`btn${xCo}${yCo}`)
-    btnClicked.innerHTML = '&times;'
-    btnClicked.classList.add('board__btn--miss')
 }
 
 function activateRadar() {
