@@ -1,17 +1,19 @@
-const gridBounds = 9
-
 class Ship {
     constructor(shipName, letter, size) {
         this.shipName = shipName
         this.letter = letter
         this.size = size
     }
-
 }
 
 const aircraft = new Ship('Aircraft', 'A', 5)
+const battleship = new Ship('Battleship', 'B', 4)
+const destroyer = new Ship('Destroyer', 'D', 3)
+const submarine = new Ship('Submarine', 'S', 2)
+const cruiser = new Ship('Cruiser', 'C', 1)
 
 function placeShip(ship) {
+    const gridBounds = 9
     let [xCo, yCo] = genCoordinates()
     let isNotEmpty = true
     let shipOrientation = Math.random() > 0.5 ? true : false
@@ -58,4 +60,8 @@ function genCoordinates() {
     return [xCo, yCo]
 }
 
-placeShip(aircraft)
+
+const allShips = [aircraft, battleship, destroyer, submarine, cruiser]
+allShips.forEach(ship => {
+    placeShip(ship)
+})
