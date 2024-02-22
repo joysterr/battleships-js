@@ -1,16 +1,26 @@
 class Ship {
-    constructor(shipName, letter, size) {
+    constructor(shipName, letter, size, shipHitCount, bonus) {
         this.shipName = shipName
         this.letter = letter
         this.size = size
+        this.shipHitCount = shipHitCount
+        this.bonus = bonus
+    }
+    updateShipHitCount() {
+        this.shipHitCount++
+    }
+    destroyed() {
+        if (this.shipHitCount === this.size) {
+            return true
+        }
     }
 }
 
-const aircraft = new Ship('Aircraft', 'A', 5)
-const battleship = new Ship('Battleship', 'B', 4)
-const destroyer = new Ship('Destroyer', 'D', 3)
-const submarine = new Ship('Submarine', 'S', 2)
-const cruiser = new Ship('Cruiser', 'C', 1)
+const aircraft = new Ship('Aircraft', 'A', 5, 0, 5)
+const battleship = new Ship('Battleship', 'B', 4, 0, 10)
+const destroyer = new Ship('Destroyer', 'D', 3, 0, 15)
+const submarine = new Ship('Submarine', 'S', 2, 0, 20)
+const cruiser = new Ship('Cruiser', 'C', 1, 0, 25)
 
 function validConfig(ship) {
     const gridBounds = 9

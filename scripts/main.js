@@ -2,8 +2,6 @@ let isRadarActive = false
 let clickCount = 0
 
 function fire(xCo, yCo) {
-    console.log('xCo: ' + xCo, 'yCo: '+ yCo)
-    
     if (isRadarActive) {
         placeRadar(xCo, yCo)
         isRadarActive = false
@@ -15,15 +13,22 @@ function fire(xCo, yCo) {
             clickCount++
         }
     }
+
+    // test
+    console.log('shot fired: ', 'xCo: ' + xCo, 'yCo: '+ yCo)
+    console.log('score: ', score)
 }
 
 function fireOutcome(xCo, yCo) {
     const btnClicked = document.getElementById(`btn${xCo}${yCo}`)
+    // target missed
     if (logicBoard[yCo][xCo] === 0) {
         btnClicked.innerHTML = '&times;'
         btnClicked.classList.add('board__btn--miss')
         logicBoard[yCo][xCo] = -1
+        updateScore('miss')
     } else {
+        // target hit
         shipHit(xCo, yCo)
     }
 }
@@ -34,7 +39,12 @@ function shipHit(xCo, yCo) {
         if (logicBoard[yCo][xCo] === ship.size) {
             btnClicked.innerHTML = ship.letter
             btnClicked.classList.add('board__btn--hit')
+
             logicBoard[yCo][xCo] = 'x'
+
+            updateScore('hit')
+            ship.updateShipHitCount()
+            ship.destroyed() && updateScore('bonus', ship.bonus)
         }
     })
 }
@@ -50,7 +60,7 @@ function checkWin() {
         }
     }
     if (xCount === 15) {
-        alert('GAMEOVEr')
+        alert(`GAMEOVER! Final Score: ${score}`)
         console.log(xCount)
     }
 }
