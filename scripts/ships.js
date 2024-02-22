@@ -12,46 +12,66 @@ const destroyer = new Ship('Destroyer', 'D', 3)
 const submarine = new Ship('Submarine', 'S', 2)
 const cruiser = new Ship('Cruiser', 'C', 1)
 
-function placeShip(ship) {
+function validConfig(ship) {
     const gridBounds = 9
+    const shipOrientation = Math.round(Math.random()) > 0.5 ? true : false
     let [xCo, yCo] = genCoordinates()
-    let isNotEmpty = true
-    let shipOrientation = Math.random() > 0.5 ? true : false
-
-    console.log(shipOrientation ? 'horizotal' : 'vertical')
+    let validConfigArr = []
+    let valid = false
 
     do {
+        if (isValidCoordinates(xCo, yCo)) {
+            if (shipOrientation) {
+                // horizontal placement
+                let reverseCo = 0
+                for (let i = 0; i < ship.size; i++) {
+                    if (xCo + i > gridBounds) {
+                        reverseCo++
+                        if (!logicBoard[yCo][xCo - reverseCo]) {
+                            validConfigArr.push([yCo, xCo - reverseCo])
+                        } else {
+                            validConfigArr = []
+                        }
+                    } else {
+                        if (!logicBoard[yCo][xCo + i]) {
+                            validConfigArr.push([yCo, xCo + i])
+                        } else {
+                            validConfigArr = []
+                        }
+                    }
+                }
+            } else {
+                // vertical placement
+                let reverseCo = 0
+                for (let i = 0; i < ship.size; i++) {
+                    if (yCo + i > gridBounds) {
+                        reverseCo++
+                        if (!logicBoard[yCo - reverseCo][xCo]) {
+                            validConfigArr.push([yCo - reverseCo, xCo])
+                        } else {
+                            validConfigArr = []
+                        }
+                    } else {
+                        if (!logicBoard[yCo + i][xCo]) {
+                            validConfigArr.push([yCo + i, xCo])
+                        } else {
+                            validConfigArr = []
+                        }
+                    }
+                }
+            }
+            if (validConfigArr.length === ship.size) {
+                valid = true
+                // testing
+                console.log(validConfigArr)
+                console.log(shipOrientation ? 'horizontal' : 'vertical')
+                console.log(xCo, yCo);
+
+                return validConfigArr
+            }
+        }     
         [xCo, yCo] = genCoordinates()
-        if (logicBoard[yCo][xCo] === 0) {
-            isNotEmpty = false
-        }
-    } while (isNotEmpty)
-
-    console.log(xCo, yCo);
-
-    if (shipOrientation) {
-        // horizontal placement
-        let reverseCo = 0
-        for (let i = 0; i < ship.size; i++) {
-            if (xCo + i > gridBounds) {
-                reverseCo++
-                logicBoard[yCo][xCo - reverseCo] = ship.size
-            } else {
-                logicBoard[yCo][xCo + i] = ship.size
-            }
-        }
-    } else {
-        // vertical placement
-        let reverseCo = 0
-        for (let i = 0; i < ship.size; i++) {
-            if (yCo + i > gridBounds) {
-                reverseCo++
-                logicBoard[yCo - reverseCo][xCo] = ship.size
-            } else {
-                logicBoard[yCo + i][xCo] = ship.size
-            }
-        }
-    }
+    } while (!valid)
 }
 
 function genCoordinates() {
@@ -60,8 +80,23 @@ function genCoordinates() {
     return [xCo, yCo]
 }
 
+function isValidCoordinates(xCo, yCo) {
+    if (logicBoard[yCo][xCo] === 0) {
+        return true
+    }
+}
 
+
+function placeShip(validShip, ship) {
+    validShip.forEach(co => {
+        logicBoard[co[0]][co[1]] = ship.size
+    })
+}
+
+
+// SPAWN SHIPS
 const allShips = [aircraft, battleship, destroyer, submarine, cruiser]
 allShips.forEach(ship => {
-    placeShip(ship)
+    const validShip = validConfig(ship)
+    placeShip(validShip, ship)
 })
