@@ -12,3 +12,12 @@ function updateScore(action, bonus=0) {
             score += bonus
     }
 }
+
+function saveHighScore() {
+    localStorage.setItem('highscore', score)
+}
+
+function getHighScore() {
+    const highScore = localStorage.getItem('highscore')
+    return highScore
+}

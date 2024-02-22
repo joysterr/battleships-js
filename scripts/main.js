@@ -52,16 +52,22 @@ function shipHit(xCo, yCo) {
 
 function checkWin() {
     let xCount = 0
-    for (let i = 0; i <= 9; i++) {
-        for (let j = 0; j <= 9; j++) {
+    for (let i = 0; i < grid; i++) {
+        for (let j = 0; j < grid; j++) {
             if (logicBoard[i][j] === 'x') {
                 xCount++
             }
         }
     }
     if (xCount === 15) {
-        alert(`GAMEOVER! Final Score: ${score}`)
-        console.log(xCount)
+        let currentHighScore = getHighScore()
+        if (score > currentHighScore) {
+            saveHighScore()
+            currentHighScore = score
+        }
+        console.log(`Final score: ${score}`)
+        console.log(`High score: ${currentHighScore}`)
+        alert('GAMEOVER!')
     }
 }
 
