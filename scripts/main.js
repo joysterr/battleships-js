@@ -1,5 +1,6 @@
 let isRadarActive = false
 let radarLeft = 3
+let clickCount = 0
 
 function fire(xCo, yCo) {
     console.log('xCo: ' + xCo, 'yCo: '+ yCo)
@@ -9,8 +10,11 @@ function fire(xCo, yCo) {
         isRadarActive = false
         radarBtnStatus('base')
     } else {
-        fireOutcome(xCo, yCo)
-        checkWin()
+        if (logicBoard[yCo][xCo] >= 0) {
+            fireOutcome(xCo, yCo)
+            checkWin()
+            clickCount++
+        }
     }
 }
 
@@ -19,6 +23,7 @@ function fireOutcome(xCo, yCo) {
     if (logicBoard[yCo][xCo] === 0) {
         btnClicked.innerHTML = '&times;'
         btnClicked.classList.add('board__btn--miss')
+        logicBoard[yCo][xCo] = -1
     } else {
         shipHit(xCo, yCo)
     }
@@ -30,21 +35,24 @@ function shipHit(xCo, yCo) {
         if (logicBoard[yCo][xCo] === ship.size) {
             btnClicked.innerHTML = ship.letter
             btnClicked.classList.add('board__btn--hit')
-            logicBoard[yCo][xCo] = -1
+            logicBoard[yCo][xCo] = 'x'
         }
     })
 }
 
 
 function checkWin() {
-    let sum = 0
-    for (let i = 0; i < grid; i++) {
-        for (let j = 0; j < grid; j++) {
-            sum += logicBoard[i][j]
+    let xCount = 0
+    for (let i = 0; i <= 9; i++) {
+        for (let j = 0; j <= 9; j++) {
+            if (logicBoard[i][j] === 'x') {
+                xCount++
+            }
         }
     }
-    if (sum === -15) { // all ship sizes, negated total
-        alert('WINNER. GAME OVER!')
+    if (xCount === 15) {
+        alert('GAMEOVEr')
+        console.log(xCount)
     }
 }
 
