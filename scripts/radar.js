@@ -1,10 +1,13 @@
 // RADAR FEATURE 
+let radarLeft = 3
+
 function placeRadar(xCo, yCo) {
     const radarSize = 1
     const radarMapX = [xCo, (xCo+radarSize), (xCo-radarSize)]
     const radarMapY = [yCo, (yCo+radarSize), (yCo-radarSize)]
-    console.log(radarMapX)
-    console.log(radarMapY)
+
+    radarLeft--
+
     for (let i = 0; i < radarMapX.length; i++) {
         for (let j = 0; j < radarMapY.length; j++) {
             try {
@@ -15,17 +18,26 @@ function placeRadar(xCo, yCo) {
             }
         }
     }
+
+    updateRadarCount()
+
+    // test
+    console.log(radarMapX)
+    console.log(radarMapY)
 }
 
 function activateRadar() {
-    radarLeft--
-    if (radarLeft < 0) {
-        radarBtnStatus('disabled')
-    } else {
+    if (radarLeft <= 0) {
+        disableRadar()
+        return
+    } 
+    if (!isRadarActive) {
         isRadarActive = true
         radarBtnStatus('active')
         console.log(`radar left: ${radarLeft}`)
-        updateRadarCount()
+    } else {
+        isRadarActive = false
+        radarBtnStatus('base')
     }
 }
 
@@ -50,4 +62,8 @@ function radarBtnStatus(status) {
 function updateRadarCount() {
     const radarCount = document.getElementById('radarCount')
     radarCount.innerHTML = `Radar left: ${radarLeft}`
+}
+
+function disableRadar() {
+    radarBtnStatus('disabled')
 }

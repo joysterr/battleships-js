@@ -1,5 +1,4 @@
 let isRadarActive = false
-let radarLeft = 3
 let clickCount = 0
 
 function fire(xCo, yCo) {
