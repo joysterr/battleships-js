@@ -1,0 +1,15 @@
+// board
+.board-container {
+    display: grid;
+    grid-template-areas: 
+        ". axis-x"
+        "axis-y board"
+    ;
+}
+
+// panel
+.board-panel {
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+}
