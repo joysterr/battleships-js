@@ -93,9 +93,6 @@
 /* radar */
 
 .radar-component {
-    width: 50%;
-    padding-block: 1rem;
-
     text-align: center;
 }
 
@@ -123,7 +120,7 @@
     background-color: var(--c-water-dark);
 }
 
-.radar__count {
+.small-text {
     margin-block-start: 0.5rem;
     color: white;
     font-size: var(--f-sm);

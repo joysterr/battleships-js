@@ -35,9 +35,15 @@
             </div>
             <div id="board" class="board"></div>
         </div>
-        <div class="radar-component">
-            <button id="radarBtn" class="radar__btn" onclick="activateRadar()">Activate Radar</button>
-            <p id="radarCount" class="radar__count">Radar left: 3</p>
+        <div class="board-panel">
+            <div class="radar-component">
+                <button id="radarBtn" class="radar__btn" onclick="activateRadar()">Activate Radar</button>
+                <p id="radarCount" class="small-text">Radar left: 3</p>
+            </div>
+            <div class="help-component">
+                <button id="helpBtn" class="help__btn" onclick="showScreen(0)">?</button>
+                <p class="small-text">Help</p>
+            </div>
         </div>
         <div id="instructions" class="overlay-screen">
             <div class="overlay-content instructions">
@@ -69,7 +75,7 @@
                     <li>Click on the Radar to Activate (or Deactivate)</li>
                     <li>Then Click on the grid to launch</li>
                 </ul>
-                <button class="instructions__btn" id="playBtn" onclick="hideScreen(0)">Let's Play!</button>
+                <button class="instructions__btn" id="playBtn" onclick="hideScreen(0)">PLAY</button>
             </div>
         </div>
         <script src="./scripts/board.js"></script>

@@ -102,3 +102,38 @@ th {
     background-color: transparent;
     color: var(--c-water-dark);
 }
+
+
+/* help */
+.help-component {
+    text-align: center;
+}
+
+.help__btn {
+    padding: 0.5rem;
+    width: 2.5rem;
+    border: none;
+    border-radius: 0.2rem;
+    border: 1px solid var(--c-primary);
+
+    font-size: var(--f-sm);
+    
+    background-color: transparent;
+    color: whitesmoke;
+    
+    transition: all 0.3s ease;
+}
+
+.help__btn:hover {
+    border: 1px solid transparent;
+
+    background-color: var(--c-primary);
+    color: var(--c-background-dark);
+}
+
+
+/* panel */
+.board-panel {
+    display: flex;
+    gap: 2rem;
+}
