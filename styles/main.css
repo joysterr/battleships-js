@@ -46,7 +46,7 @@ th {
 /* misc */
 .overlay-screen {
     position: absolute;
-    top: 0;
+    top: -100%;
     height: 100vh;
     width: 100%;
     display: grid;
