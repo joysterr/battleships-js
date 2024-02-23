@@ -61,14 +61,21 @@ function checkWin() {
     }
     if (xCount === 15) {
         let currentHighScore = getHighScore()
+        const endgameScore = document.getElementById('endgameScore')
+        const endgameHighScore = document.getElementById('endgameHighScore')
         if (score > currentHighScore) {
             saveHighScore()
             currentHighScore = score
         }
-        console.log(`Final score: ${score}`)
-        console.log(`High score: ${currentHighScore}`)
-        alert('GAMEOVER!')
+        endgameScore.innerText = score
+        endgameHighScore.innerText = currentHighScore
+        showScreen(1)
     }
 }
 
-
+function restartGame() {
+    hideScreen(1)
+    setTimeout(() => {
+        location.reload()
+    }, 300)
+}

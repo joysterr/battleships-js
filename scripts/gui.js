@@ -1,4 +1,5 @@
-const instructionsMenu = document.querySelector('.overlay-screen')
+const instructionScreen = document.querySelector('.overlay-screen[id="instructions"]')
+const endgameScreen = document.querySelector('.overlay-screen[id="endgame"]')
 
 function loadInstructionTable() {
     const shipTable = document.getElementById('shipTableData')
@@ -16,13 +17,17 @@ function loadInstructionTable() {
 
 function hideScreen(num) {
     if (num === 0) {
-        instructionsMenu.style.top = '-100%'
+        instructionScreen.style.top = '-100%'
+    } else {
+        endgameScreen.style.top = '-100%'
     }
 }
 
 function showScreen(num) {
     if (num === 0) {
-        instructionsMenu.style.top = '0'
+        instructionScreen.style.top = '0'
+    } else {
+        endgameScreen.style.top = '0'
     }
 }
 

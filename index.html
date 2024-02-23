@@ -91,12 +91,20 @@
                 <button class="instructions__btn" id="playBtn" onclick="hideScreen(0)">PLAY</button>
             </div>
         </div>
+        <div id="endgame" class="overlay-screen">
+            <div class="endgame">
+                <h1 class="title">Game Over!</h1>
+                <h2 class="subtitle endgame__score">Score: <span id="endgameScore"></span></h2>
+                <h2 class="subtitle endgame__highscore">High Score: <span id="endgameHighScore"></span></h2>
+                <button class="endgame__btn" onclick="restartGame()">Play Again</button>
+            </div>
+        </div>
+        <script src="./scripts/score.js"></script>
         <script src="./scripts/board.js"></script>
         <script src="./scripts/main.js"></script>
         <script src="./scripts/logic.js"></script>
         <script src="./scripts/ships.js"></script>
         <script src="./scripts/radar.js"></script>
-        <script src="./scripts/score.js"></script>
         <script src="./scripts/gui.js"></script>
     </body>
 </html>
