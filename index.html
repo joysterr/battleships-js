@@ -39,11 +39,45 @@
             <button id="radarBtn" class="radar__btn" onclick="activateRadar()">Activate Radar</button>
             <p id="radarCount" class="radar__count">Radar left: 3</p>
         </div>
+        <div id="instructions" class="overlay-screen">
+            <div class="overlay-content instructions">
+                <h1 class="title">Welcome to Battleships!</h1>
+                <h2 class="subtitle">Instructions:</h2>
+                <ul class="instructions__list">
+                    <li>Main objective: Sink all ships in fewest moves</li>
+                    <li>Scoring: hit = 1 | miss = -1 | destroy ship = bonus</li>
+                    <li>Get to know the ships:</li>
+                </ul>
+                <table class="instructions__table">
+                    <thead>
+                        <tr>
+                            <th>Ship</th>
+                            <th>Key</th>
+                            <th>Size</th>
+                            <th>Bonus</th>
+                        </tr>
+                        <tbody id="shipTableData">
+
+                        </tbody>
+                    </thead>
+                </table>
+                <p>The RADAR perk:</p>
+                <ul class="instructions__list">
+                    <li>Radar allows you to scan the grid for ships</li>
+                    <li>3 Radars available</li>
+                    <li>Radars cost -2 score points</li>
+                    <li>Click on the Radar to Activate (or Deactivate)</li>
+                    <li>Then Click on the grid to launch</li>
+                </ul>
+                <button class="instructions__btn" id="playBtn" onclick="hideScreen(0)">Let's Play!</button>
+            </div>
+        </div>
         <script src="./scripts/board.js"></script>
         <script src="./scripts/main.js"></script>
         <script src="./scripts/logic.js"></script>
         <script src="./scripts/ships.js"></script>
         <script src="./scripts/radar.js"></script>
         <script src="./scripts/score.js"></script>
+        <script src="./scripts/gui.js"></script>
     </body>
 </html>
