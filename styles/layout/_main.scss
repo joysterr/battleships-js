@@ -1,5 +1,19 @@
+// main layout
+.main-layout {
+    display: grid;
+    grid-template-areas: 
+        "board track"
+        "board status"
+        "board tools"
+        "radar ."
+    ;
+    gap: 1rem;
+}
+
 // board
 .board-container {
+    grid-column: board;
+    grid-row: board;
     display: grid;
     grid-template-areas: 
         ". axis-x"
@@ -7,9 +21,36 @@
     ;
 }
 
-// panel
-.board-panel {
-    display: flex;
-    gap: 2rem;
+
+@mixin txt-align-center {
     text-align: center;
+    align-self: center;
+}
+
+// radar-panel
+.radar-panel {
+    margin-inline-start: 50px; // center under board
+    grid-column: radar;
+    @include txt-align-center()
+}
+
+// ship tracking panel
+.track-panel {
+    grid-column: track;
+    grid-row: track;
+    @include txt-align-center()
+}
+
+// game/action status panel
+.status-panel {
+    grid-column: status;
+    grid-row: status;
+    @include txt-align-center()
+}
+
+// tools i.e. help panel
+.tools-panel {
+    grid-column: tools;
+    grid-row: tools;
+    @include txt-align-center()
 }
