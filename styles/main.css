@@ -42,15 +42,45 @@ th {
   color: var(--c-primary);
 }
 
+.main-layout {
+  display: grid;
+  grid-template-areas: "board track" "board status" "board tools" "radar .";
+  gap: 1rem;
+}
+
 .board-container {
+  grid-column: board;
+  grid-row: board;
   display: grid;
   grid-template-areas: ". axis-x" "axis-y board";
 }
 
-.board-panel {
-  display: flex;
-  gap: 2rem;
+.radar-panel {
+  margin-inline-start: 50px;
+  grid-column: radar;
   text-align: center;
+  align-self: center;
+}
+
+.track-panel {
+  grid-column: track;
+  grid-row: track;
+  text-align: center;
+  align-self: center;
+}
+
+.status-panel {
+  grid-column: status;
+  grid-row: status;
+  text-align: center;
+  align-self: center;
+}
+
+.tools-panel {
+  grid-column: tools;
+  grid-row: tools;
+  text-align: center;
+  align-self: center;
 }
 
 .board {
@@ -180,6 +210,16 @@ th {
 }
 .radar__btn--active {
   background-color: var(--c-water-dark);
+}
+
+.status-panel {
+  padding: 0.5rem;
+  width: 8rem;
+  border: 1px solid var(--c-primary);
+  border-radius: 0.3rem;
+}
+.status-panel .status__text {
+  font-size: var(--f-sm);
 }
 
 .small-text {

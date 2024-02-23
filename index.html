@@ -7,43 +7,57 @@
         <title>Battleships | Let's Play</title>
     </head>
     <body>
-        <div class="board-container">
-            <div class="board__axis board__axis--x">
-                <div>0</div>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-                <div>6</div>
-                <div>7</div>
-                <div>8</div>
-                <div>9</div>
+        <main class="main-layout">
+            <div class="board-container">
+                <div class="board__axis board__axis--x">
+                    <div>0</div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                </div>
+                <div class="board__axis board__axis--y">
+                    <div>0</div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                </div>
+                <div id="board" class="board"></div>
             </div>
-            <div class="board__axis board__axis--y">
-                <div>0</div>
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-                <div>6</div>
-                <div>7</div>
-                <div>8</div>
-                <div>9</div>
+            <div class="radar-panel">
+                <div class="radar-component">
+                    <button id="radarBtn" class="radar__btn" onclick="activateRadar()">Activate Radar</button>
+                    <p id="radarCount" class="small-text">Radar left: 3</p>
+                </div>
             </div>
-            <div id="board" class="board"></div>
-        </div>
-        <div class="board-panel">
-            <div class="radar-component">
-                <button id="radarBtn" class="radar__btn" onclick="activateRadar()">Activate Radar</button>
-                <p id="radarCount" class="small-text">Radar left: 3</p>
+            <div class="track-panel">
+                <p>x</p>
+                <p>x</p>
+                <p>x</p>
+                <p>x</p>
+                <p>x</p>
             </div>
-            <div class="help-component">
-                <button id="helpBtn" class="help__btn" onclick="showScreen(0)">?</button>
-                <p class="small-text">Help</p>
+            <div class="status-panel">
+                <p class="status__text" id="status">---STATUS---</p>
             </div>
-        </div>
+            <div class="tools-panel">
+                <div class="help-component">
+                    <button id="helpBtn" class="help__btn" onclick="showScreen(0)">?</button>
+                    <p class="small-text">Help</p>
+                </div>
+            </div>
+        </main>
         <div id="instructions" class="overlay-screen">
             <div class="overlay-content instructions">
                 <h1 class="title">Welcome to Battleships!</h1>
