@@ -4,6 +4,8 @@
   --c-secondary: #8BC6EC;
   --c-water-light: #8BC6EC;
   --c-water-dark: #9599E2;
+  --c-hit: greenyellow;
+  --c-miss: red;
   --f-sm: 0.8rem;
 }
 
@@ -124,21 +126,21 @@ th {
 }
 .board__btn--hit {
   background: none;
-  color: greenyellow;
+  color: var(--c-hit);
   font-size: var(--f-sm);
 }
 .board__btn--hit:hover {
   background: none;
-  color: greenyellow;
+  color: var(--c-hit);
   font-size: var(--f-sm);
 }
 .board__btn--miss {
   background: none;
-  color: red;
+  color: var(--c-miss);
 }
 .board__btn--miss:hover {
   background: none;
-  color: red;
+  color: var(--c-miss);
 }
 
 .overlay-screen {
@@ -244,11 +246,33 @@ th {
   color: var(--c-water-dark);
 }
 
-.ship__data {
+.ship {
+  padding: 0.5rem;
+  border: 1px solid var(--c-primary);
+  border-radius: 0.2rem;
+}
+.ship__row {
   font-size: var(--f-sm);
   display: flex;
-  justify-content: center;
   gap: 0.5rem;
+}
+.ship__letter {
+  width: 1rem;
+  display: flex;
+}
+.ship__data {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.ship__part {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--c-hit);
+}
+.ship__part--hit {
+  background-color: var(--c-miss);
 }
 
 .small-text {

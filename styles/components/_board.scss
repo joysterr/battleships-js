@@ -48,23 +48,23 @@
 
     &--hit {
         background: none;
-        color: greenyellow;
+        color: var(--c-hit);
         font-size: var(--f-sm);
 
         &:hover {
             background: none;
-            color: greenyellow;
+            color: var(--c-hit);
             font-size: var(--f-sm);
         }
     }
 
     &--miss {
         background: none;
-        color: red;
+        color: var(--c-miss);
 
         &:hover {
             background: none;
-            color: red;
+            color: var(--c-miss);
         }
     }
 }

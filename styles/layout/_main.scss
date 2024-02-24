@@ -31,26 +31,26 @@
 .radar-panel {
     margin-inline-start: 50px; // center under board
     grid-column: radar;
-    @include txt-align-center()
+    @include txt-align-center();
 }
 
 // ship tracking panel
 .track-panel {
     grid-column: track;
     grid-row: track;
-    @include txt-align-center()
+    @include txt-align-center();
 }
 
 // game/action score panel
 .score-panel {
     grid-column: score;
     grid-row: score;
-    @include txt-align-center()
+    @include txt-align-center();
 }
 
 // tools i.e. help panel
 .tools-panel {
     grid-column: tools;
     grid-row: tools;
-    @include txt-align-center()
+    @include txt-align-center();
 }

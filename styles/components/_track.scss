@@ -1,6 +1,36 @@
-.ship__data {
-    font-size: var(--f-sm);
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
+.ship {
+    padding: 0.5rem;
+    border: 1px solid var(--c-primary);
+    border-radius: 0.2rem;
+
+    &__row {
+        font-size: var(--f-sm);
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    &__letter {
+        width: 1rem;
+        display: flex;
+        // justify-content: center;
+    }
+
+    &__data {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+    
+    &__part {
+        width: 0.75rem;
+        height: 0.75rem;
+    
+        border-radius: 50%;
+    
+        background-color: var(--c-hit);
+    
+        &--hit {
+            background-color: var(--c-miss);
+        }
+    }
 }
