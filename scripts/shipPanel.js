@@ -14,16 +14,28 @@ function initShipPanel() {
 
 function updateShipPanel(ship) {
     const shipStatus = document.getElementById(`ship${ship.letter}`)
-    shipStatus.innerHTML = renderShipParts(ship.size - ship.shipHitCount)
+    shipStatus.innerHTML = renderShipParts(ship.size, ship.shipHitCount)
 }
 
-function renderShipParts(partCount) {
+function renderShipParts(size, hitCount) {
+    let leftCount = size - hitCount
     let shipParts = ''
-    for (let i = 0; i < partCount; i++) {
-        shipParts += `
-            <div class="ship__part"></div>
-        `
+    const shipLeftPart = '<div class="ship__part"></div>'
+    const shipHitPart = '<div class="ship__part ship__part--hit"></div>'
+
+    if (!hitCount) {
+        for (let i = 0; i < size; i++) {
+            shipParts += shipLeftPart
+        }
+    } else {
+        for (let i = 0; i < leftCount; i++) {
+            shipParts += shipLeftPart
+        }
+        for (let i = 0; i < hitCount; i++) {
+            shipParts += shipHitPart
+        }
     }
+
     return shipParts
 }
 

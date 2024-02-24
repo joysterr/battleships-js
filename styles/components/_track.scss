@@ -25,12 +25,13 @@
         width: 0.75rem;
         height: 0.75rem;
     
+        border: 1px solid var(--c-primary);
         border-radius: 50%;
-    
-        background-color: var(--c-hit);
+
+        background-color: var(--c-primary);
     
         &--hit {
-            background-color: var(--c-miss);
+            background-color:transparent;
         }
     }
 }
