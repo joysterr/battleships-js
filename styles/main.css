@@ -44,7 +44,7 @@ th {
 
 .main-layout {
   display: grid;
-  grid-template-areas: "board track" "board status" "board tools" "radar .";
+  grid-template-areas: "board track" "board score" "board tools" "radar .";
   gap: 1rem;
 }
 
@@ -69,9 +69,9 @@ th {
   align-self: center;
 }
 
-.status-panel {
-  grid-column: status;
-  grid-row: status;
+.score-panel {
+  grid-column: score;
+  grid-row: score;
   text-align: center;
   align-self: center;
 }
@@ -212,13 +212,13 @@ th {
   background-color: var(--c-water-dark);
 }
 
-.status-panel {
+.score-panel {
   padding: 0.5rem;
   width: 8rem;
   border: 1px solid var(--c-primary);
   border-radius: 0.3rem;
 }
-.status-panel .status__text {
+.score-panel .score__text {
   font-size: var(--f-sm);
 }
 

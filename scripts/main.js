@@ -14,6 +14,9 @@ function fire(xCo, yCo) {
         }
     }
 
+    // display updated live score
+    renderLiveScore()
+
     // test
     console.log('shot fired: ', 'xCo: ' + xCo, 'yCo: '+ yCo)
     console.log('score: ', score)

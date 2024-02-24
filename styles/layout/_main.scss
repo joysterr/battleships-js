@@ -3,7 +3,7 @@
     display: grid;
     grid-template-areas: 
         "board track"
-        "board status"
+        "board score"
         "board tools"
         "radar ."
     ;
@@ -41,10 +41,10 @@
     @include txt-align-center()
 }
 
-// game/action status panel
-.status-panel {
-    grid-column: status;
-    grid-row: status;
+// game/action score panel
+.score-panel {
+    grid-column: score;
+    grid-row: score;
     @include txt-align-center()
 }
 

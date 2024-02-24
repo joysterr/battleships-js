@@ -1,4 +1,5 @@
 let score = 0
+const liveScore = document.getElementById('liveScore')
 
 function updateScore(action, bonus=0) {
     switch (action) {
@@ -20,4 +21,8 @@ function saveHighScore() {
 function getHighScore() {
     const highScore = localStorage.getItem('highscore')
     return highScore
+}
+
+function renderLiveScore() {
+    liveScore.innerText = score
 }
