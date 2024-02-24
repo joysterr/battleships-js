@@ -48,6 +48,9 @@ function shipHit(xCo, yCo) {
             updateScore('hit')
             ship.updateShipHitCount()
             ship.destroyed() && updateScore('bonus', ship.bonus)
+
+            //render ship/track panel details
+            updateShipPanel(ship)
         }
     })
 }
