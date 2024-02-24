@@ -2,7 +2,7 @@ const shipPanel = document.getElementById('trackPanel')
 
 function initShipPanel() {
     allShips.forEach(ship => {
-        const shipParts = renderShipParts(ship.size)
+        const shipParts = renderShipParts(ship.size, ship.shipHitCount)
         shipPanel.innerHTML += `
         <div class="ship__row">
             <div class="ship__letter">${ship.letter}:</div>
@@ -18,20 +18,14 @@ function updateShipPanel(ship) {
 }
 
 function renderShipParts(size, hitCount) {
-    let leftCount = size - hitCount
     let shipParts = ''
     const shipLeftPart = '<div class="ship__part"></div>'
     const shipHitPart = '<div class="ship__part ship__part--hit"></div>'
 
-    if (!hitCount) {
-        for (let i = 0; i < size; i++) {
+    for (let i = 0; i < size; i++) {
+        if (i < size - hitCount) {
             shipParts += shipLeftPart
-        }
-    } else {
-        for (let i = 0; i < leftCount; i++) {
-            shipParts += shipLeftPart
-        }
-        for (let i = 0; i < hitCount; i++) {
+        } else {
             shipParts += shipHitPart
         }
     }
