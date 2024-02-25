@@ -9,10 +9,11 @@ function fire(xCo, yCo) {
     } else {
         if (logicBoard[yCo][xCo] >= 0) {
             fireOutcome(xCo, yCo)
-            checkWin()
-            clickCount++
         }
     }
+
+    checkWin()
+    clickCount++
 
     // display updated live score
     renderLiveScore()
@@ -22,14 +23,14 @@ function fire(xCo, yCo) {
     console.log('score: ', score)
 }
 
-function fireOutcome(xCo, yCo) {
+function fireOutcome(xCo, yCo, isRadarActive=false) {
     const btnClicked = document.getElementById(`btn${xCo}${yCo}`)
     // target missed
     if (logicBoard[yCo][xCo] === 0) {
         btnClicked.innerHTML = '&times;'
         btnClicked.classList.add('board__btn--miss')
         logicBoard[yCo][xCo] = -1
-        updateScore('miss')
+        !isRadarActive && updateScore('miss')
     } else {
         // target hit
         shipHit(xCo, yCo)

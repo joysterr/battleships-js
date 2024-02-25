@@ -9,6 +9,9 @@ function updateScore(action, bonus=0) {
         case 'hit':
             score++
             break
+        case 'radar':
+            score -= 2
+            break
         case 'bonus':
             score += bonus
     }

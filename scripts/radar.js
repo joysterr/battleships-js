@@ -5,13 +5,14 @@ function placeRadar(xCo, yCo) {
     const radarSize = 1
     const radarMapX = [xCo, (xCo+radarSize), (xCo-radarSize)]
     const radarMapY = [yCo, (yCo+radarSize), (yCo-radarSize)]
+    const isRadarActive = true
 
     radarLeft--
 
     for (let i = 0; i < radarMapX.length; i++) {
         for (let j = 0; j < radarMapY.length; j++) {
             try {
-                fireOutcome(radarMapX[i], radarMapY[j])
+                fireOutcome(radarMapX[i], radarMapY[j], isRadarActive)
             }
             catch {
                 continue
@@ -20,6 +21,7 @@ function placeRadar(xCo, yCo) {
     }
 
     updateRadarCount()
+    updateScore('radar')
 
     // test
     console.log(radarMapX)
