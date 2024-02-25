@@ -60,27 +60,27 @@ th {
 .radar-panel {
   margin-inline-start: 50px;
   grid-column: radar;
-  text-align: center;
-  align-self: center;
 }
 
 .track-panel {
   grid-column: track;
   grid-row: track;
-  text-align: center;
-  align-self: center;
 }
 
 .score-panel {
   grid-column: score;
   grid-row: score;
-  text-align: center;
-  align-self: center;
 }
 
 .tools-panel {
   grid-column: tools;
   grid-row: tools;
+}
+
+.radar-panel,
+.track-panel,
+.score-panel,
+.tools-panel {
   text-align: center;
   align-self: center;
 }
@@ -92,7 +92,6 @@ th {
   grid-template-rows: repeat(10, minmax(0, 1fr));
   border: solid 1px gray;
 }
-
 .board__axis > div {
   width: 50px;
   height: 50px;

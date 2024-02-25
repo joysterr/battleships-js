@@ -1,3 +1,9 @@
+// mixins
+@mixin txt-align-center {
+    text-align: center;
+    align-self: center;
+}
+
 // main layout
 .main-layout {
     display: grid;
@@ -21,36 +27,34 @@
     ;
 }
 
-
-@mixin txt-align-center {
-    text-align: center;
-    align-self: center;
-}
-
 // radar-panel
 .radar-panel {
     margin-inline-start: 50px; // center under board
     grid-column: radar;
-    @include txt-align-center();
 }
 
 // ship tracking panel
 .track-panel {
     grid-column: track;
     grid-row: track;
-    @include txt-align-center();
 }
 
 // game/action score panel
 .score-panel {
     grid-column: score;
     grid-row: score;
-    @include txt-align-center();
 }
 
 // tools i.e. help panel
 .tools-panel {
     grid-column: tools;
     grid-row: tools;
+}
+
+// align panels
+.radar-panel,
+.track-panel, 
+.score-panel, 
+.tools-panel {
     @include txt-align-center();
 }
