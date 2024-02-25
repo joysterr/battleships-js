@@ -20,7 +20,7 @@ function placeRadar(xCo, yCo) {
         }
     }
 
-    updateRadarCount()
+    renderRadarCount()
     updateScore('radar')
 
     // test
@@ -61,7 +61,7 @@ function radarBtnStatus(status) {
     }
 }
 
-function updateRadarCount() {
+function renderRadarCount() {
     const radarCount = document.getElementById('radarCount')
     radarCount.innerHTML = `Radar left: ${radarLeft}`
 }

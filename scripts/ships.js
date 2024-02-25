@@ -16,6 +16,7 @@ class Ship {
     }
 }
 
+// init all ships
 const aircraft = new Ship('Aircraft', 'A', 5, 0, 5)
 const battleship = new Ship('Battleship', 'B', 4, 0, 10)
 const destroyer = new Ship('Destroyer', 'D', 3, 0, 15)
@@ -24,7 +25,7 @@ const cruiser = new Ship('Cruiser', 'C', 1, 0, 25)
 
 function validConfig(ship) {
     const gridBounds = 9
-    const shipOrientation = Math.round(Math.random()) > 0.5 ? true : false
+    const shipOrientation = Math.round(Math.random()) > 0.5 ? true : false // true = horizontal, false = vertical 
     let [xCo, yCo] = genCoordinates()
     let validConfigArr = []
     let valid = false
@@ -36,6 +37,7 @@ function validConfig(ship) {
                 let reverseCo = 0
                 for (let i = 0; i < ship.size; i++) {
                     if (xCo + i > gridBounds) {
+                        // right to left placement of ship parts
                         reverseCo++
                         if (!logicBoard[yCo][xCo - reverseCo]) {
                             validConfigArr.push([yCo, xCo - reverseCo])
@@ -43,6 +45,7 @@ function validConfig(ship) {
                             validConfigArr = []
                         }
                     } else {
+                        // left to right placement of ship parts
                         if (!logicBoard[yCo][xCo + i]) {
                             validConfigArr.push([yCo, xCo + i])
                         } else {
@@ -55,6 +58,7 @@ function validConfig(ship) {
                 let reverseCo = 0
                 for (let i = 0; i < ship.size; i++) {
                     if (yCo + i > gridBounds) {
+                        // bottom to top placement of ship parts
                         reverseCo++
                         if (!logicBoard[yCo - reverseCo][xCo]) {
                             validConfigArr.push([yCo - reverseCo, xCo])
@@ -62,6 +66,7 @@ function validConfig(ship) {
                             validConfigArr = []
                         }
                     } else {
+                        // top to bottom placement of ship parts
                         if (!logicBoard[yCo + i][xCo]) {
                             validConfigArr.push([yCo + i, xCo])
                         } else {
@@ -72,6 +77,7 @@ function validConfig(ship) {
             }
             if (validConfigArr.length === ship.size) {
                 valid = true
+
                 // testing
                 console.log(validConfigArr)
                 console.log(shipOrientation ? 'horizontal' : 'vertical')
@@ -80,7 +86,7 @@ function validConfig(ship) {
                 return validConfigArr
             }
         }     
-        [xCo, yCo] = genCoordinates()
+        [xCo, yCo] = genCoordinates() // regen if fails all checks
     } while (!valid)
 }
 
@@ -96,7 +102,7 @@ function isValidCoordinates(xCo, yCo) {
     }
 }
 
-
+// place ship at valid coordinates
 function placeShip(validShip, ship) {
     validShip.forEach(co => {
         logicBoard[co[0]][co[1]] = ship.size
