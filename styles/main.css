@@ -228,30 +228,30 @@ th {
 }
 
 .btn--large {
-  display: block;
+  border: 1px solid var(--c-primary);
+  border-radius: 0.2rem;
+  background-color: var(--c-primary);
+  color: var(--c-background-dark);
+  font-size: var(--f-sm);
+  transition: all 0.3s ease;
   margin-inline: auto;
   margin-block: 1.5rem;
   padding: 1rem 2.5rem;
-  border: 1px solid transparent;
-  border-radius: 0.2rem;
-  font-size: var(--f-sm);
-  background-color: var(--c-primary);
-  transition: all 0.3s ease;
+  display: block;
 }
 .btn--large:hover {
-  border: 1px solid var(--c-water-dark);
   background-color: transparent;
-  color: var(--c-water-dark);
+  color: var(--c-primary);
 }
 
 .btn--small {
-  padding: 0.5rem;
   border: 1px solid var(--c-primary);
   border-radius: 0.2rem;
-  font-size: var(--f-sm);
   background-color: var(--c-primary);
   color: var(--c-background-dark);
+  font-size: var(--f-sm);
   transition: all 0.3s ease;
+  padding: 0.5rem;
 }
 .btn--small:hover {
   background-color: transparent;

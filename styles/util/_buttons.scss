@@ -1,39 +1,30 @@
+//mixin 
+@mixin basic-btn-style {
+    border: 1px solid var(--c-primary);
+    border-radius: 0.2rem;
+    background-color: var(--c-primary);
+    color: var(--c-background-dark);
+    font-size: var(--f-sm);
+    transition: all 0.3s ease;
+}
+
 .btn--large {
-    display: block;
+    @include basic-btn-style();
 
     margin-inline: auto;
     margin-block: 1.5rem;
     padding: 1rem 2.5rem;
-
-    border: 1px solid transparent;
-    border-radius: 0.2rem;
-
-    font-size: var(--f-sm);
-
-    background-color: var(--c-primary);
-
-    transition: all 0.3s ease;
+    display: block;
 
     &:hover {
-        border: 1px solid var(--c-water-dark);
-
         background-color: transparent;
-        color: var(--c-water-dark);
+        color: var(--c-primary);
     }
 }
 
 .btn--small {
+    @include basic-btn-style();
     padding: 0.5rem;
-    
-    border: 1px solid var(--c-primary);
-    border-radius: 0.2rem;
-
-    font-size: var(--f-sm);
-
-    background-color: var(--c-primary);
-    color: var(--c-background-dark);
-    
-    transition: all 0.3s ease;
 
     &:hover {
         background-color: transparent;
