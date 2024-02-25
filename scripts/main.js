@@ -7,15 +7,16 @@ function fire(xCo, yCo) {
         isRadarActive = false
         radarBtnStatus('base')
     } else {
+        // register click/fire if not already clicked (i.e. not x )
         if (logicBoard[yCo][xCo] >= 0) {
             fireOutcome(xCo, yCo)
         }
     }
 
     checkWin()
+
     clickCount++
 
-    // display updated live score
     renderLiveScore()
 
     // test
@@ -50,13 +51,13 @@ function shipHit(xCo, yCo) {
             ship.updateShipHitCount()
             ship.destroyed() && updateScore('bonus', ship.bonus)
 
-            //render ship/track panel details
+            // render ship/track panel details
             updateShipPanel(ship)
         }
     })
 }
 
-
+// counts ship hits, game ends when 15 'x' marks are found in logic board matrix
 function checkWin() {
     let xCount = 0
     for (let i = 0; i < grid; i++) {
@@ -66,23 +67,29 @@ function checkWin() {
             }
         }
     }
+
     if (xCount === 15) {
         let currentHighScore = getHighScore()
-        const endgameScore = document.getElementById('endgameScore')
-        const endgameHighScore = document.getElementById('endgameHighScore')
         if (score > currentHighScore) {
             saveHighScore()
             currentHighScore = score
         }
-        endgameScore.innerText = score
-        endgameHighScore.innerText = currentHighScore
-        showScreen(1)
+        renderEndgameScores(score, currentHighScore)
+        showScreen(1) // display endgame overlay screen
     }
 }
 
+function renderEndgameScores(score, highScore) {
+    const endgameScore = document.getElementById('endgameScore')
+    const endgameHighScore = document.getElementById('endgameHighScore')
+
+    endgameScore.innerText = score
+    endgameHighScore.innerText = highScore
+}
+
 function restartGame() {
-    hideScreen(1)
+    hideScreen(1) // hide endgame overlay screen
     setTimeout(() => {
-        location.reload()
+        location.reload() // reload battleships
     }, 300)
 }
