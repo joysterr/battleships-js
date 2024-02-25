@@ -7,18 +7,18 @@
 
     font-size: var(--f-sm);
 
-    background-color: var(--c-water-light);
+    background-color: var(--c-primary);
 
     transition: all 0.3s ease;
 
     &:hover {
-        border: 1px solid var(--c-water-dark);
+        border: 1px solid var(--c-primary);
     
         background-color: transparent;
-        color: var(--c-water-dark);
+        color: var(--c-primary);
     }
 
     &--active {
-        background-color: var(--c-water-dark);
+        background-color: var(--c-primary);
     }
 }

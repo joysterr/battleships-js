@@ -183,19 +183,16 @@ th {
 
 .help__btn {
   padding: 0.5rem;
-  width: 2.5rem;
-  border: none;
   border: 1px solid var(--c-primary);
   border-radius: 0.2rem;
   font-size: var(--f-sm);
-  background-color: transparent;
-  color: whitesmoke;
+  background-color: var(--c-primary);
+  color: var(--c-background-dark);
   transition: all 0.3s ease;
 }
 .help__btn:hover {
-  border: 1px solid transparent;
-  background-color: var(--c-primary);
-  color: var(--c-background-dark);
+  background-color: transparent;
+  color: var(--c-primary);
 }
 
 .radar__btn {
@@ -203,16 +200,16 @@ th {
   border: 1px solid transparent;
   border-radius: 0.2rem;
   font-size: var(--f-sm);
-  background-color: var(--c-water-light);
+  background-color: var(--c-primary);
   transition: all 0.3s ease;
 }
 .radar__btn:hover {
-  border: 1px solid var(--c-water-dark);
+  border: 1px solid var(--c-primary);
   background-color: transparent;
-  color: var(--c-water-dark);
+  color: var(--c-primary);
 }
 .radar__btn--active {
-  background-color: var(--c-water-dark);
+  background-color: var(--c-primary);
 }
 
 .score-panel {
