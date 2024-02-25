@@ -1,14 +1,15 @@
 .instructions {
     &__list {
-        list-style-type: none;
-        
-        & > li::before {
-            content: '+ ';
-        }
+        list-style-type: circle;
+        padding-inline-start: 1rem;
     }
     
     &__table {
-        margin-block: 1.5rem;
+        margin-block: 1rem;
+
+        & td {
+            font-size: var(--f-sm);
+        }
     }
     
     &__btn {

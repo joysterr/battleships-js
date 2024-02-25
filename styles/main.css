@@ -155,13 +155,14 @@ th {
 }
 
 .instructions__list {
-  list-style-type: none;
-}
-.instructions__list > li::before {
-  content: "+ ";
+  list-style-type: circle;
+  padding-inline-start: 1rem;
 }
 .instructions__table {
-  margin-block: 1.5rem;
+  margin-block: 1rem;
+}
+.instructions__table td {
+  font-size: var(--f-sm);
 }
 .instructions__btn {
   display: block;
@@ -289,7 +290,7 @@ th {
 }
 
 .subtitle {
-  margin: 0.5rem;
+  margin-block-start: 0.5rem;
   color: var(--c-secondary);
 }
 

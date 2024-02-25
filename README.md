@@ -1,32 +1,39 @@
-# Battleships-js v0.1
+# Battleships-js v0.2
 
-> ⚠️ status: _under development_
+> ⚠️ status: _open beta (stable)_
+
+## 👾 How to Play
+**Main objective:** Sink all ships in the fewest moves. Beat your own highscore!
+
+**Scoring:** 
+- Hit = 1
+- Miss = -1
+- Ship destroyed = Bonus
+
+**Ships info:**
+
+| Ship       | Key | Size | Bonus |
+|------------|-----|------|-------|
+| Aircraft   | 'A' | 5    | 5     |
+| Battleship | 'B' | 4    | 10    |
+| Destroyer  | 'D' | 3    | 15    |
+| Submarine  | 'S' | 2    | 20    |
+| Cruiser    | 'C' | 1    | 25    |
+
+
+**The Radar:**
+
+- The Radar can scan the grid for ships (3 available).
+- Radars cost -2 score points.
+- Click on the Radar button to Activate/Deactivate.
+- Then Click on the grid to launch.
 
 ## 🛠️ Technologies used
 - UI: HTML, SASS/SCSS, CSS animations
+- Layout: CSS Grid + Flex
 - Logic: Vanilla JavaScript
 - More: JS DOM manipulation, ES Classes, LocalStorage
 
-## 👾 How to Play
-- **Main objective**: Sink all ships in fewest moves
-- Scoring: hit = 1 | miss = -1 | destroy ship = bonus
-- Get to know the ships:
-
-| Ship        | Key | Size | Bonus |
-|-------------|-----|------|-------|
-| Aircraft    | 'A' | 5    | 5     |
-| Battleship  | 'B' | 4    | 10    |
-| Destroyer   | 'D' | 3    | 15    |
-| Submarine   | 'S' | 2    | 20    |
-| Cruiser     | 'C' | 1    | 25    |
-
-The RADAR perk:
-
-- Radar allows you to scan the grid for ships
-- 3 Radars available
-- Radars cost -2 score points
-- Click on the Radar to Activate (or Deactivate)
-- Then Click on the grid to launch
 
 ## 👽 Known issues
 **Bugs:**  
