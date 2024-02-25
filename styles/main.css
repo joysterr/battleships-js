@@ -164,22 +164,6 @@ th {
 .instructions__table td {
   font-size: var(--f-sm);
 }
-.instructions__btn {
-  display: block;
-  margin-inline: auto;
-  margin-block: 1.5rem;
-  padding: 1rem 2.5rem;
-  border: 1px solid transparent;
-  border-radius: 0.2rem;
-  font-size: var(--f-sm);
-  background-color: var(--c-primary);
-  transition: all 0.3s ease;
-}
-.instructions__btn:hover {
-  border: 1px solid var(--c-water-dark);
-  background-color: transparent;
-  color: var(--c-water-dark);
-}
 
 .help__btn {
   padding: 0.5rem;
@@ -289,6 +273,23 @@ th {
 .subtitle {
   margin-block-start: 0.5rem;
   color: var(--c-secondary);
+}
+
+.btn--large {
+  display: block;
+  margin-inline: auto;
+  margin-block: 1.5rem;
+  padding: 1rem 2.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.2rem;
+  font-size: var(--f-sm);
+  background-color: var(--c-primary);
+  transition: all 0.3s ease;
+}
+.btn--large:hover {
+  border: 1px solid var(--c-water-dark);
+  background-color: transparent;
+  color: var(--c-water-dark);
 }
 
 /*# sourceMappingURL=main.css.map */
