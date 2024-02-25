@@ -30,7 +30,8 @@ function placeRadar(xCo, yCo) {
 
 function activateRadar() {
     if (radarLeft <= 0) {
-        disableRadar()
+        // disable radar btn
+        radarBtnStatus('disabled')
         return
     } 
     if (!isRadarActive) {
@@ -48,13 +49,12 @@ function radarBtnStatus(status) {
     switch (status) {
         case 'base':
             radarBtn.innerText = 'Activate Radar'
-            radarBtn.classList.remove('radar__btn--active')
             break
         case 'active':
             radarBtn.innerText = 'Radar: ON'
-            radarBtn.classList.add('radar__btn--active')
             break
         case 'disabled':
+            radarBtn.classList.add('radar__btn--disabled')
             radarBtn.innerText = 'Radar: OFF'
             radarBtn.disabled = true
             break
@@ -64,8 +64,4 @@ function radarBtnStatus(status) {
 function updateRadarCount() {
     const radarCount = document.getElementById('radarCount')
     radarCount.innerHTML = `Radar left: ${radarLeft}`
-}
-
-function disableRadar() {
-    radarBtnStatus('disabled')
 }

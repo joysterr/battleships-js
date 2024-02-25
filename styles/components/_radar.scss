@@ -1,24 +1,10 @@
-// radar
-.radar__btn {
-    padding: 0.5rem;
+.radar-panel {
+    .radar__btn {
+        &--disabled {
+            background-color: transparent;
+            color: var(--c-primary);
 
-    border: 1px solid transparent;
-    border-radius: 0.2rem;
-
-    font-size: var(--f-sm);
-
-    background-color: var(--c-primary);
-
-    transition: all 0.3s ease;
-
-    &:hover {
-        border: 1px solid var(--c-primary);
-    
-        background-color: transparent;
-        color: var(--c-primary);
-    }
-
-    &--active {
-        background-color: var(--c-primary);
+            cursor: default;
+        }
     }
 }

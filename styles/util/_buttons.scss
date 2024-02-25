@@ -21,3 +21,22 @@
         color: var(--c-water-dark);
     }
 }
+
+.btn--small {
+    padding: 0.5rem;
+    
+    border: 1px solid var(--c-primary);
+    border-radius: 0.2rem;
+
+    font-size: var(--f-sm);
+
+    background-color: var(--c-primary);
+    color: var(--c-background-dark);
+    
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--c-primary);
+    }
+}
