@@ -1,6 +1,6 @@
 # Battleships-js v0.2
 
-> ⚠️ status: _open beta (stable)_
+> ⚠️ status: _stable release_
 
 ## 👾 How to Play
 **Main objective:** Sink all ships in the fewest moves. Beat your own highscore!
@@ -40,8 +40,10 @@
 - n/a 
 
 **Limitations:**
-- No mobile support (Desktop & Tablet Only)
+- Partial mobile support (Works best on Desktop & Tablet)
 
 ## 🚀 Future Plans
 - Improve UI/UX
+- Full mobile support
 - Multiplayer support (online + local)
+- Additional features + game modes
