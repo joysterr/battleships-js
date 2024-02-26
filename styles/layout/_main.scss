@@ -62,7 +62,6 @@
 @media (max-width: 425px) {
     .main-layout {
         width: 100%;
-        display: grid;
         grid-template-areas:
             "board"
             "radar"
@@ -70,7 +69,6 @@
             "score"
             "tools"
         ;
-        gap: 1rem;
     }
 
     .board-container {
@@ -81,7 +79,6 @@
     .score-panel,
     .tools-panel {
         justify-self: center;
-        align-self: center;
     }
 
     .radar-panel {
