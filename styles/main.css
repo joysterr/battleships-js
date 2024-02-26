@@ -16,7 +16,7 @@
 }
 
 body {
-  height: 100dvh;
+  height: 100vh;
   display: grid;
   place-items: center;
   line-height: 1.5;
@@ -85,6 +85,29 @@ th {
   align-self: center;
 }
 
+@media (max-width: 425px) {
+  .main-layout {
+    width: 100%;
+    display: grid;
+    grid-template-areas: "board" "radar" "track" "score" "tools";
+    gap: 1rem;
+  }
+  .board-container {
+    grid-template-areas: "board";
+  }
+  .radar-panel,
+  .score-panel,
+  .tools-panel {
+    justify-self: center;
+    align-self: center;
+  }
+  .radar-panel {
+    margin-inline-start: 0;
+  }
+  .track-panel {
+    justify-self: stretch;
+  }
+}
 .board {
   grid-column-start: 2;
   display: grid;
@@ -142,10 +165,22 @@ th {
   color: var(--c-miss);
 }
 
+@media (max-width: 425px) {
+  .board {
+    grid-column: board;
+  }
+  .board__axis {
+    display: none;
+  }
+  .board__btn {
+    height: 100%;
+    aspect-ratio: 1;
+  }
+}
 .overlay-screen {
   position: absolute;
-  top: -100%;
-  height: 100dvh;
+  top: -150%;
+  height: 100vh;
   width: 100%;
   display: grid;
   place-items: center;
@@ -227,6 +262,12 @@ th {
   color: var(--c-secondary);
 }
 
+@media (max-width: 425px) {
+  .title,
+  .subtitle {
+    font-size: 1rem;
+  }
+}
 .btn--large {
   border: 1px solid var(--c-primary);
   border-radius: 0.2rem;

@@ -7,7 +7,7 @@
 // main layout
 .main-layout {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         "board track"
         "board score"
         "board tools"
@@ -21,7 +21,7 @@
     grid-column: board;
     grid-row: board;
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         ". axis-x"
         "axis-y board"
     ;
@@ -53,8 +53,42 @@
 
 // align panels
 .radar-panel,
-.track-panel, 
-.score-panel, 
+.track-panel,
+.score-panel,
 .tools-panel {
     @include txt-align-center();
+}
+
+@media (max-width: 425px) {
+    .main-layout {
+        width: 100%;
+        display: grid;
+        grid-template-areas:
+            "board"
+            "radar"
+            "track"
+            "score"
+            "tools"
+        ;
+        gap: 1rem;
+    }
+
+    .board-container {
+        grid-template-areas: "board";
+    }
+
+    .radar-panel,
+    .score-panel,
+    .tools-panel {
+        justify-self: center;
+        align-self: center;
+    }
+
+    .radar-panel {
+        margin-inline-start: 0;
+    }
+
+    .track-panel {
+        justify-self: stretch;
+    }
 }

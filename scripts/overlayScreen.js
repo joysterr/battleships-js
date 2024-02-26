@@ -17,9 +17,9 @@ function loadInstructionTable() {
 
 function hideScreen(num) {
     if (num === 0) {
-        instructionScreen.style.top = '-100%'
+        instructionScreen.style.top = '-150%'
     } else {
-        endgameScreen.style.top = '-100%'
+        endgameScreen.style.top = '-150%'
     }
 }
 

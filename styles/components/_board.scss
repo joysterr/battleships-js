@@ -68,3 +68,17 @@
         }
     }
 }
+
+@media (max-width: 425px) {
+    .board {
+        grid-column: board;
+    }
+    .board__axis {
+        display: none;
+    }
+
+    .board__btn {
+        height: 100%;
+        aspect-ratio: 1;
+    }
+}
