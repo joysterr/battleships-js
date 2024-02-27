@@ -32,7 +32,7 @@
 - UI: HTML, SASS/SCSS, CSS animations
 - Layout: CSS Grid + Flex
 - Logic: Vanilla JavaScript
-- More: JS DOM manipulation, ES Classes, LocalStorage
+- More: JS DOM manipulation, ES Classes, LocalStorage, Event Handling
 
 
 ## 👽 Known issues

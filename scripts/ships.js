@@ -78,11 +78,6 @@ function validConfig(ship) {
             if (validConfigArr.length === ship.size) {
                 valid = true
 
-                // testing
-                console.log(validConfigArr)
-                console.log(shipOrientation ? 'horizontal' : 'vertical')
-                console.log(xCo, yCo);
-
                 return validConfigArr
             }
         }     

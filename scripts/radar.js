@@ -22,10 +22,6 @@ function placeRadar(xCo, yCo) {
 
     renderRadarCount()
     updateScore('radar')
-
-    // test
-    console.log(radarMapX)
-    console.log(radarMapY)
 }
 
 function activateRadar() {

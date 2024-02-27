@@ -18,10 +18,6 @@ function fire(xCo, yCo) {
     clickCount++
 
     renderLiveScore()
-
-    // test
-    console.log('shot fired: ', 'xCo: ' + xCo, 'yCo: '+ yCo)
-    console.log('score: ', score)
 }
 
 function fireOutcome(xCo, yCo, isRadarActive=false) {

@@ -31,7 +31,7 @@ function showScreen(num) {
     }
 }
 
-// load instrcution menu only on first load
+// display instruction menu only on first load
 function initInstructionMenu() {
     if (!localStorage.getItem('first-load')) {
         showScreen(0)

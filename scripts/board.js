@@ -10,8 +10,6 @@ function initLogicBoard() {
         }
         logicBoard.push(arr)
     }
-    // test
-    console.log(logicBoard)
 }
 
 function renderBoard() {
